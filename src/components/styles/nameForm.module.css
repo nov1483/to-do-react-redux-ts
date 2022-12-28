@@ -1,0 +1,37 @@
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nameText {
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.nameText::placeholder {
+  color: #000;
+}
+
+.taskBtn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: rgba(74, 194, 158, 0.623);
+  transition: ease-in-out 0.5s;
+}
+
+.taskBtn:hover {
+  color: #000;
+  background-color: rgba(35, 137, 196, 0.651);
+  transform: scale(1.10);
+}

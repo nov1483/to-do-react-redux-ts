@@ -1,0 +1,26 @@
+.taskItem {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  outline: 0;
+  border-bottom: 1px solid #000;
+}
+
+.taskItem::placeholder {
+  color: #fff;
+}
+
+.taskComplete {
+  text-decoration: line-through;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  outline: 0;
+  border-bottom: 1px solid #000;
+}
