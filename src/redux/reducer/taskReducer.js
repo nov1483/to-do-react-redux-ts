@@ -1,16 +1,18 @@
+import {
+  ADD_TASK,
+  CHANGE_NAME,
+  EDIT_TASK,
+  EDIT_TASK_CONTENT,
+  DELETE,
+  DONE,
+  CHANGE_DONE_FLAG,
+} from "./actionConst";
+
 export const defaultState = {
   userName: "",
   tasks: [],
   count: 0,
 };
-
-const ADD_TASK = "ADD_TASK";
-const CHANGE_NAME = "CHANGE_NAME";
-const DELETE = "DELETE";
-const EDIT_TASK = "EDIT_TASK";
-const EDIT_TASK_CONTENT = "EDIT_TASK_CONTENT";
-const DONE = "DONE";
-const CHANGE_DONE_FLAG = "CHANGE_DONE_FLAG";
 
 export default (state = defaultState, action) => {
   switch (action.type) {

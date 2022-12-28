@@ -1,21 +1,21 @@
-import taskReducer, { addTask, changeName, defaultState } from "./taskReducer";
-// test('name should be changed', () => {
+import taskReducer from './taskReducer'
+import {
+  ADD_TASK,
+  CHANGE_NAME,
+  EDIT_TASK,
+  EDIT_TASK_CONTENT,
+  DELETE,
+  DONE,
+  CHANGE_DONE_FLAG,
+} from "./actionConst";
 
-// //   const action = changeName('Anton')
-// //   let result = taskReducer(defaultState,action)
-// //   expect(result).toEqual({
-
-// //     userName: 'Anton',
-// //     ...defaultState,
-// //   })
-// // })
 describe("NAME", () => {
   test("name should be changed", () => {
     const state = {
       userName: "No Name",
     };
     const newState = taskReducer(state, {
-      type: "CHANGE_NAME",
+      type: CHANGE_NAME,
       name: "Anton",
     });
     expect(newState.userName).toBe("Anton");
@@ -27,7 +27,7 @@ describe("TASKS", () => {
       tasks: [{ content: "some content" }],
     };
     const newState = taskReducer(state, {
-      type: "ADD_TASK",
+      type: ADD_TASK,
       content: "new content",
     });
     expect(newState.tasks.length).toBe(2);
@@ -40,7 +40,7 @@ describe("TASKS", () => {
       ],
     };
     const newState = taskReducer(state, {
-      type: "DELETE",
+      type: DELETE,
       id: 2,
     });
     expect(newState.tasks.length).toBe(1);
@@ -53,7 +53,7 @@ describe("TASKS", () => {
       ],
     };
     const newState = taskReducer(state, {
-      type: "EDIT_TASK",
+      type: EDIT_TASK,
       id: 1,
     });
     expect(newState.tasks[0].isEdit).toBeTruthy();
@@ -66,7 +66,7 @@ describe("TASKS", () => {
       ],
     };
     const newState = taskReducer(state, {
-      type: "EDIT_TASK_CONTENT",
+      type: EDIT_TASK_CONTENT,
       id: 2,
       content: "Edit content",
     });
@@ -80,7 +80,7 @@ describe("TASKS", () => {
       ],
     };
     const newState = taskReducer(state, {
-      type: "DONE",
+      type: DONE,
       id: 1,
     });
     expect(newState.tasks[0].isDone).toBeTruthy();
@@ -93,7 +93,7 @@ describe("TASKS", () => {
       ],
     };
     const newState = taskReducer(state, {
-      type: "CHANGE_DONE_FLAG",
+      type: CHANGE_DONE_FLAG,
       id: 1,
     });
     expect(newState.tasks[0].isDone).toBeFalsy();
