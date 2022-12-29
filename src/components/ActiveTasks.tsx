@@ -7,20 +7,20 @@ import {
   changeTaskContent,
   deleteTask,
   doneTask,
-} from "../redux/reducer/taskReducer";
+} from "../redux/actions/action";
 import Button from "./UI/Button";
 import Input from "./UI/Input";
 import classes from "./styles/activeTasks.module.css";
 import LinkTo from "./UI/LinkTo";
+import { RootState } from "../redux";
 
 function ActiveTasks() {
-  const tasks = useSelector((state) => state.tasks.tasks);
-  console.log(tasks)
+  const tasks = useSelector((state: RootState) => state.tasks.tasks);
   const dispatch = useDispatch();
   const [content, setContent] = useState("");
   const [flag, setFlag] = useState(true);
 
-  function contentTasksHandler(e) {
+  function contentTasksHandler(e:React.ChangeEvent<HTMLInputElement>) {
     setContent(e.target.value);
     if (e.target.value === "") {
       setFlag(true);
@@ -62,7 +62,7 @@ function ActiveTasks() {
                   flag={task.isDone.toString()}
                   disabled={task.isDone}
                   readOnly={!task.isEdit}
-                  onChange={(e) =>
+                  onChange={(e:React.ChangeEvent<HTMLInputElement>) =>
                     dispatch(changeTaskContent(task.id, e.target.value))
                   }
                   value={task.content}

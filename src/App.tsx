@@ -1,6 +1,6 @@
-import './App.css';
 import { AppRouter } from './components/AppRoutes';
 import Header from './components/Header';
+import './App.css';
 
 
 

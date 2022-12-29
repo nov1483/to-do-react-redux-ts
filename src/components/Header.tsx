@@ -1,10 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { RootState } from "../redux";
+
 
 function Header() {
   const location = useLocation();
-  const tasks = useSelector((state) => state.tasks);
+  const tasks = useSelector((state: RootState) => state.tasks);
   return (
     <div>
       {location.pathname === "/" ? (
