@@ -1,13 +1,13 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "./UI/Button";
-import { ChangeDoneFlag } from "../redux/reducer/taskReducer";
+import { ChangeDoneFlag } from "../redux/actions/action";
 import Input from "./UI/Input";
 import LinkTo from "./UI/LinkTo";
 import classes from "./styles/completeTask.module.css";
+import { RootState } from "../redux";
 
 function CompleteTasks() {
-  const tasks = useSelector((state) => state.tasks.tasks);
+  const tasks = useSelector((state: RootState) => state.tasks.tasks);
   const dispatch = useDispatch();
   return (
     <div>

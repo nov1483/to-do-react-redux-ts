@@ -1,7 +1,7 @@
-import React from 'react'
 import classes from '../styles/button.module.css'
+import { ButtonInt } from '../types'
 
-function Button(props) {
+const Button:React.FC<ButtonInt> = (props) => {
   return (
     <button className={classes.taskBtn} {...props}>{props.children}</button>
   )

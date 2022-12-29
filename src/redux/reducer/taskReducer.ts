@@ -7,14 +7,14 @@ import {
   DONE,
   CHANGE_DONE_FLAG,
 } from "./actionConst";
-
-export const defaultState = {
+import { ActionTypes, Tasks } from "../../components/types";
+export const defaultState: Tasks = {
   userName: "",
   tasks: [],
   count: 0,
 };
 
-export default (state = defaultState, action) => {
+export default (state = defaultState, action: ActionTypes): Tasks => {
   switch (action.type) {
     case CHANGE_NAME: {
       return {
@@ -94,46 +94,4 @@ export default (state = defaultState, action) => {
     default:
       return state;
   }
-};
-
-export const changeName = (name) => {
-  return (dispatch) => {
-    return dispatch({ type: CHANGE_NAME, name });
-  };
-};
-
-export const addTask = (content) => {
-  return (dispatch) => {
-    return dispatch({ type: ADD_TASK, content });
-  };
-};
-
-export const deleteTask = (id) => {
-  return (dispatch) => {
-    return dispatch({ type: DELETE, id });
-  };
-};
-
-export const changeTask = (id) => {
-  return (dispatch) => {
-    return dispatch({ type: EDIT_TASK, id });
-  };
-};
-
-export const changeTaskContent = (id, content) => {
-  return (dispatch) => {
-    return dispatch({ type: EDIT_TASK_CONTENT, id, content });
-  };
-};
-
-export const doneTask = (id) => {
-  return (dispatch) => {
-    return dispatch({ type: DONE, id });
-  };
-};
-
-export const ChangeDoneFlag = (id) => {
-  return (dispatch) => {
-    return dispatch({ type: CHANGE_DONE_FLAG, id });
-  };
 };
