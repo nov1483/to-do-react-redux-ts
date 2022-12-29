@@ -51,6 +51,31 @@ interface ActionChangeDoneFlag {
   id: number;
 }
 
+export interface InputInt {
+  flag? : string,
+  onBlur?: React.FocusEventHandler<HTMLInputElement>,
+  onChange?: React.ChangeEventHandler<HTMLInputElement>,
+  value?: string,
+  defaultValue?: string,
+  type?: string,
+  placeholder?: string,
+  disabled?: boolean,
+  readOnly?: boolean,
+  required?: boolean,
+  children?: string
+}
+
+export interface ButtonInt {
+  onClick: React.MouseEventHandler<HTMLButtonElement>,
+  disabled?: boolean,
+  children: string
+}
+
+export interface LinkInt {
+  to: string,
+  children: string
+}
+
 export type ActionTypes =
   | ActionChangeName
   | ActionAddTask
